@@ -1,0 +1,33 @@
+.product-box{
+    -webkit-box-shadow: 0px -4px 26px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -4px 26px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px -4px 26px -6px rgba(0,0,0,0.75);
+    margin: 20px;
+    margin-top: 0;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 15px;
+}
+.love{
+    text-align: right;
+}
+.orange-color{
+    color: orange;
+}
+.orange-bg{
+    color: orange;
+}
+.info{
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.info p{
+    margin-bottom: 0;
+}
+.info button{
+    border: none;
+    outline: none;
+    background: none;
+}

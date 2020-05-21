@@ -1,0 +1,10 @@
+export const registerURL = "/api/user/register"
+export const verifyURL = "/api/user/verify"
+export const loginURL = "/api/user/login"
+export const googleURL = "/auth/google"
+export const profileURL = "/api/user/profile"
+export const updatePhoneURL = "/api/user/profile/updatePhone"
+
+export const productsURL = "/api/products"
+export const orderURL = "/api/product/order"
+export const userOrderURL = "/api/user/order"

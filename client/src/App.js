@@ -29,16 +29,15 @@ import ProtectedRoute from './utils/ProtectedRoute';
 import Footer from './components/footer/Footer';
 import NotFound from './components/notFound/Notfound';
 
-const App = ({ loginOAuth }) => {
+const App = ({ loginOAuth, history }) => {
 
   useEffect(() => {
-    // remove hash
-    if (window.location.hash === '#') window.location.hash = '';
     const token = Cookies.get('mycookie');
     if (token) {
       localStorage.setItem('token', token)
       Cookies.remove('mycookie');
       loginOAuth(token)
+      history.push('/profile')
     }
 
   }, [loginOAuth])

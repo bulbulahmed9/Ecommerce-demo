@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {
   Switch,
   Route,
+  withRouter
 } from "react-router-dom";
 import { connect } from 'react-redux'
 import { loginOAuth } from './services/actions/authAction'
@@ -60,4 +61,4 @@ const App = ({ loginOAuth, history }) => {
   )
 }
 
-export default connect(null, { loginOAuth })(App)
+export default connect(null, { loginOAuth })(withRouter(App))

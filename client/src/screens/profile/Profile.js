@@ -64,7 +64,7 @@ const Profile = ({ profile, loadUser, updatePhone, loading, getUserOrder, orders
                 </div>
             </div> <br /> <br />
             {orders.length > 0 ? <div>
-                <h3>Your Order</h3>
+                <h3 className="mb-3">Your Order</h3>
                 <div className="row">
                     {
 

@@ -18,7 +18,7 @@ const Homepage = ({ getProduct, products }) => {
 
     return (
         products.products !== null ? <div className="container mt-5">
-        <h3>All Products</h3>
+        <h3 className="mb-3">All Products</h3>
         <div style={{ display: "flex" }}>
             <ProductList />
             <Cart />

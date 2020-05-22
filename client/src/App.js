@@ -32,6 +32,7 @@ import NotFound from './components/notFound/Notfound';
 const App = ({ loginOAuth }) => {
 
   useEffect(() => {
+    if (window.location.hash === '#') window.location.hash = '';
     const token = Cookies.get('mycookie');
     if (token) {
       localStorage.setItem('token', token)

@@ -33,7 +33,7 @@ const Cart = ({ removeCart, cart, clearCart, incrementCart, decrementCart, grand
                             <p className="quantity"> {item.quantity} </p>
                             <button onClick={() => incrementCart(item)} className="increment">+</button>
                             <p className="price">${item.info.price * item.quantity}.00 </p>
-                            <button onClick={() => removeCart(cart, item)} className="cross">
+                            <button onClick={() => removeCart(item)} className="cross">
                                 X
                             </button>
                         </div>

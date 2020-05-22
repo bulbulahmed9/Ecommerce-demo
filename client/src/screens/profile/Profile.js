@@ -9,14 +9,16 @@ import { loadUser } from '../../services/actions/authAction'
 import { updatePhone } from '../../services/actions/profileAction'
 import { getUserOrder } from '../../services/actions/getUserOrderAction'
 
-const Profile = ({ profile, loadUser, updatePhone, loading, getUserOrder }) => {
+import demo from '../../shared/img/demo.svg'
+
+const Profile = ({ profile, loadUser, updatePhone, loading, getUserOrder, orders }) => {
 
 
 
     useEffect(() => {
         loadUser()
         getUserOrder()
-    }, [loadUser, loading])
+    }, [loadUser, loading, getUserOrder])
 
     let name = profile && profile.name
     let email = profile ? profile.email || profile.googleEmail || profile.facebookEmail : null
@@ -60,7 +62,29 @@ const Profile = ({ profile, loadUser, updatePhone, loading, getUserOrder }) => {
                     </div>}
                     <p className="card-text mt-3"> Member Since <Moment format="DD/MM/YYYY">{dateToFormat}</Moment> </p>
                 </div>
-            </div>
+            </div> <br /> <br />
+            {orders.length > 0 ? <div>
+                <h3>Your Order</h3>
+                <div className="row">
+                    {
+
+                        orders.map((order, index) => {
+                            return <div key={index} className="col-md-4">
+                                <div className="card mb-4" style={{ width: '18rem' }}>
+                                    <img className="card-img-top" src={demo} alt="product" />
+                                    <div className="card-body">
+                                        <h5 className="card-title"> {order.name} </h5>
+                                        <p className="card-text"> Quantity: {order.quantity} </p>
+                                        <p className="card-text"> Price {`$${order.price}.00`} </p>
+                                        <p className="card-text"> Grand Total: {`$${order.price * order.quantity}.00`} </p>
+                                    </div>
+                                </div>
+                            </div>
+                        })
+                    }
+                </div>
+            </div> : <h3>Currrently You don't have any pending order</h3>
+            }
         </div> : <BigLoader />
 
     )
@@ -74,7 +98,8 @@ Profile.prototypes = {
 }
 const mapStateToProps = state => ({
     profile: state.auth.profile,
-    loading: state.profileReducer.loading
+    loading: state.profileReducer.loading,
+    orders: state.userOrder.order
 })
 
 export default connect(mapStateToProps, { loadUser, updatePhone, getUserOrder })(Profile)

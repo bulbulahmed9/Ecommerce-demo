@@ -12,7 +12,7 @@ const SingleProduct = ({ product, addCart, isCart }) => {
     return (
         <>
             <div className="product-box col-md-3">
-                <p className={isCart ? 'orange-color love': 'orange'}><i className="far fa-heart"></i></p>
+                <p className={isCart ? 'orange-color love': 'love'}><i className="far fa-heart"></i></p>
                 <img src={demo} className="img-fluid" alt="img" />
                 <div className="info">
                     <div>

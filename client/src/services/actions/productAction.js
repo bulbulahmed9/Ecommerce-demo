@@ -1,5 +1,4 @@
 import { get_product_success, get_product_failed, get_product_loader } from '../types'
-import { toast } from 'react-toastify'
 import axios from 'axios'
 import { productsURL } from '../../API/api'
 
@@ -19,6 +18,5 @@ export const getProduct = () => async dispatch => {
         dispatch({
             type: get_product_failed
         })
-        toast("Something went wrong")
     }
 }

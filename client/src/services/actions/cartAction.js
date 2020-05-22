@@ -12,6 +12,7 @@ import {
 import { orderURL } from '../../API/api'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import {setAuthToken} from '../../utils/setAuthToken'
 
 export const addCart = (product) => dispatch => {
     dispatch({
@@ -50,6 +51,10 @@ export const clearCart = () => dispatch => {
 }
 
 export const checkout = (cartItem) => async dispatch => {
+
+    if (localStorage.token) {
+        setAuthToken(localStorage.token)
+    }
 
     let config = {
         headers: {

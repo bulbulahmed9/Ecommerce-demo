@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 // components
 import Cart from '../../components/cart/Cart'
 import ProductList from '../../components/product/ProductList'
+import BigLoader from '../../components/loading/BigLoader'
 
 const Homepage = ({ getProduct, products }) => {
 
@@ -16,13 +17,14 @@ const Homepage = ({ getProduct, products }) => {
     }, [getProduct])
 
     return (
-        <div className="container mt-5">
-            <h3>All Products</h3>
-            <div style={{ display: "flex" }}>
-                <ProductList />
-                <Cart />
-            </div>
+        products.products !== null ? <div className="container mt-5">
+        <h3>All Products</h3>
+        <div style={{ display: "flex" }}>
+            <ProductList />
+            <Cart />
         </div>
+    </div> :
+    <BigLoader />
     )
 }
 
@@ -31,7 +33,7 @@ Homepage.prototypes = {
 }
 
 const mapStateToProps = state => ({
-    products: state.products.products
+    products: state.products
 })
 
 export default connect(mapStateToProps, { getProduct })(Homepage)

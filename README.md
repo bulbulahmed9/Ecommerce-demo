@@ -1,6 +1,5 @@
 
-# Sell BD
-Ecommerce Cart
+# Ecommerce Cart
 
 <h3>Overview</h3>
 <p>This is a simple ecommerce cart application. There is some demo products, You can add those to your cart and you can make an order.</p>

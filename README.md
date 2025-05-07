@@ -5,7 +5,6 @@
 <p>This is a simple ecommerce cart application. There is some demo products, You can add those to your cart and you can make an order.</p>
 
 <div></div> <br>
-<span>See live demo : https://ecommerce24.herokuapp.com </span>
 
 <h3>Features</h3>
 <ul>

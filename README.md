@@ -4,8 +4,6 @@
 <h3>Overview</h3>
 <p>This is a simple ecommerce cart application. There is some demo products, You can add those to your cart and you can make an order.</p>
 
-<div></div> <br>
-
 <h3>Features</h3>
 <ul>
   <li>Local Sign Up</li>
